@@ -158,11 +158,29 @@ This codebase is developed with the following tools:
 
 ### Merging changes to pythonpkg from duckdb main
 
-Check the git log for the last changes to the pythonpkg since the last ref you have 
+1. Checkout main
+2Identify the merge commits that brought in tags to main:
+```bash
+git log --graph --oneline --decorate main --simplify-by-decoration
+```
+
+3. Get the log of commits
+```bash
+git log --oneline 71c5c07cdd..c9254ecff2 -- tools/pythonpkg/
+```
+
+4. Checkout v1.3-ossivalis
+5. Get the log of commits
+```bash
+git log --oneline v1.3.0..v1.3.1 -- tools/pythonpkg/
+```
+git diff --name-status 71c5c07cdd c9254ecff2 -- tools/pythonpkg/
 
 ```bash
-git log <hash>..HEAD -- tools/pythonpkg/
+git log --oneline 71c5c07cdd..c9254ecff2 -- tools/pythonpkg/
+git diff --name-status <HASH_A> <HASH_B> -- tools/pythonpkg/
 ```
+
 
 ## Versioning and Releases
 
