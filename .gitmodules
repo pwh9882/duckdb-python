@@ -1,6 +1,6 @@
 [submodule "external/duckdb"]
 	path = external/duckdb
-	url = https://github.com/duckdb/duckdb.git
-	branch = main
+	url = https://github.com/pwh9882/duckdb.git
+	branch = asof_sorted_backward_one_join
 [submodule]
 	recurse = true
